@@ -34,3 +34,10 @@ jobs:
     steps:
       - name: Running PR closed script
         run: echo "Executing PR-CLOSED job"
+  workflow_dispatch_event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Workflow Disptach Event
+        run: |
+        echo "Envinorment: ${{ github.event.inputs.envinorment }}"
+        
