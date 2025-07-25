@@ -1,0 +1,26 @@
+name: Events
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    types: [opened, closed]
+
+jobs:
+  push-job: 
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Running push script
+        run: echo "Executing push job"
+  pull-request-opened:
+    if: github.event_name == 'pull_request' && github.event.action == 'opened'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Running PR open script
+        run: echo "Executing PR-OPEN job"
+  pull-request-closed:
+    if: github.event_name == 'pull_request' && github.event.action == "closed"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Running PR closed script
+        run: echo "Executing PR-CLOSED job"
