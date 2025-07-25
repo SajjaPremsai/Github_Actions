@@ -4,8 +4,9 @@ on:
     branches:
       - main
 jobs:
-  echo-jobs: null
-  runs-on: ubuntu-latest
-  steps:
-    - name: print a message
-      run: echo "Hello World"
+  Running-bash-Script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Running bash script
+        run: echo "hello"
+        shell: bash
