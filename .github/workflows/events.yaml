@@ -39,5 +39,5 @@ jobs:
     steps:
       - name: Workflow Disptach Event
         run: |
-          echo "Envinorment: ${{ github.event.inputs.envinorment }}"
+          echo "Envinorment: ${{ github.event.inputs.environment }}"
         
