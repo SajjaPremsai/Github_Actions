@@ -4,6 +4,16 @@ on:
     branches: [main, master]
   pull_request:
     types: [opened, closed]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'choose description'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+          - staging
+          - production
 
 jobs:
   push-job: 
